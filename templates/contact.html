@@ -1,0 +1,115 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Mirrored from preview.colorlib.com/theme/pivot/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:14:08 GMT -->
+    {#<head>#}
+    {#<title>Pivot &mdash; Website Template by Colorlib</title>#}
+    {#<meta charset="utf-8">#}
+    {#<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
+    {#<link href="https://fonts.googleapis.com/css?family=K2D:400,700|Niramit:300,700" rel="stylesheet">#}
+    {#<link rel="stylesheet" href="css/bootstrap.css">#}
+    {#<link rel="stylesheet" href="css/animate.css">#}
+    {#<link rel="stylesheet" href="css/owl.carousel.min.css">#}
+    {#<link rel="stylesheet" href="css/bootstrap-datepicker.html">#}
+    {#<link rel="stylesheet" href="css/jquery.timepicker.html">#}
+    {#<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">#}
+    {#<link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">#}
+    {#<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">#}
+    {##}
+    {#<link rel="stylesheet" href="css/style.css">#}
+    {#<script nonce="93be8ad6-ae21-4ef9-b53b-f8f8a521bb05">(function(w,d){!function(dp,dq,dr,ds){dp[dr]=dp[dr]||{};dp[dr].executed=[];dp.zaraz={deferred:[],listeners:[]};dp.zaraz.q=[];dp.zaraz._f=function(dt){return async function(){var du=Array.prototype.slice.call(arguments);dp.zaraz.q.push({m:dt,a:du})}};for(const dv of["track","set","debug"])dp.zaraz[dv]=dp.zaraz._f(dv);dp.zaraz.init=()=>{var dw=dq.getElementsByTagName(ds)[0],dx=dq.createElement(ds),dy=dq.getElementsByTagName("title")[0];dy&&(dp[dr].t=dq.getElementsByTagName("title")[0].text);dp[dr].x=Math.random();dp[dr].w=dp.screen.width;dp[dr].h=dp.screen.height;dp[dr].j=dp.innerHeight;dp[dr].e=dp.innerWidth;dp[dr].l=dp.location.href;dp[dr].r=dq.referrer;dp[dr].k=dp.screen.colorDepth;dp[dr].n=dq.characterSet;dp[dr].o=(new Date).getTimezoneOffset();if(dp.dataLayer)for(const dC of Object.entries(Object.entries(dataLayer).reduce(((dD,dE)=>({...dD[1],...dE[1]})),{})))zaraz.set(dC[0],dC[1],{scope:"page"});dp[dr].q=[];for(;dp.zaraz.q.length;){const dF=dp.zaraz.q.shift();dp[dr].q.push(dF)}dx.defer=!0;for(const dG of[localStorage,sessionStorage])Object.keys(dG||{}).filter((dI=>dI.startsWith("_zaraz_"))).forEach((dH=>{try{dp[dr]["z_"+dH.slice(7)]=JSON.parse(dG.getItem(dH))}catch{dp[dr]["z_"+dH.slice(7)]=dG.getItem(dH)}}));dx.referrerPolicy="origin";dx.src="https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dp[dr])));dw.parentNode.insertBefore(dx,dw)};["complete","interactive"].includes(dq.readyState)?zaraz.init():dp.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>#}
+    {#<body>#}
+    {#<header role="banner">#}
+    {#<nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+    {#<div class="container">#}
+    {#<a class="navbar-brand position-absolute" href="home.html">Pivot</a>#}
+    {#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">#}
+    {#<span class="navbar-toggler-icon"></span>#}
+    {#</button>#}
+    {#<div class="collapse navbar-collapse position-relative" id="navbarsExample05">#}
+    {#<ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link" href="home.html">Home</a>#}
+    {#</li>#}
+    {#<li class="nav-item dropdown">#}
+    {#<a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>#}
+    {#<div class="dropdown-menu" aria-labelledby="dropdown04">#}
+    {#<a class="dropdown-item" href="services.html">Pre-Construction</a>#}
+    {#<a class="dropdown-item" href="services.html">General Construction</a>#}
+    {#<a class="dropdown-item" href="services.html">House Renovation</a>#}
+    {#<a class="dropdown-item" href="services.html">Plumbing</a>#}
+    {#</div>#}
+    {#</li>#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link" href="projects">Projects</a>#}
+    {#</li>#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link" href="news.html">News</a>#}
+    {#</li>#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link" href="about.html">About</a>#}
+    {#</li>#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link active" href="contact.html">Contact</a>#}
+    {#</li>#}
+    {#<li class="nav-item cta-btn2">#}
+    {#<a class="nav-link" href="get-quote.html">#}
+    {#<span class="d-inline-block px-4 py-2 border">Quotation</span>#}
+    {#</a>#}
+    {#</li>#}
+    {#</ul>#}
+    {#</div>#}
+    {#</div>#}
+    {#</nav>#}
+    {#</header>#}
+
+    <section class="inner-page">
+        <div class="slider-item py-5" style="background-image: url('{% static 'img/slider-1.jpg' %}');">
+            <div class="container">
+                <div class="row slider-text align-items-center justify-content-center text-center">
+                    <div class="col-md-7 col-sm-12 element-animate">
+                        <h1 class="text-white">Contact Us</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <form action="#" method="post">
+                         {% csrf_token %}
+                        <div class="row">
+                            {#<div class="col-md-6 form-group">#}
+                            {#<label for="fname">First Name</label>#}
+                            {#<input type="text" class="form-control form-control-lg" id="fname">#}
+                            {#</div>#}
+                            <div class="col-md-12 form-group">
+                                <label for="lname">Name</label>
+                                <input type="text" class="form-control form-control-lg" name="name" id="lname">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="email">Phone number</label>
+                                <input type="text" name="number" id="email" class="form-control form-control-lg">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="message">Write Message</label>
+                                <textarea name="message" id="message" class="form-control form-control-lg" cols="30"
+                                          rows="8"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="submit" value="Send Message" class="btn btn-primary btn-lg btn-block">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+{% endblock %}
