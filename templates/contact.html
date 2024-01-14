@@ -1,115 +1,340 @@
-{% extends 'layouts/base.html' %}
+<!doctype html>
 {% load static %}
-{% block content %}
+<html lang="en">
+<head>
+    <title>UMA construction &mdash; Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=K2D:400,700|Niramit:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.html' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.html' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
 
-    <!-- Mirrored from preview.colorlib.com/theme/pivot/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:14:08 GMT -->
-    {#<head>#}
-    {#<title>Pivot &mdash; Website Template by Colorlib</title>#}
-    {#<meta charset="utf-8">#}
-    {#<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
-    {#<link href="https://fonts.googleapis.com/css?family=K2D:400,700|Niramit:300,700" rel="stylesheet">#}
-    {#<link rel="stylesheet" href="css/bootstrap.css">#}
-    {#<link rel="stylesheet" href="css/animate.css">#}
-    {#<link rel="stylesheet" href="css/owl.carousel.min.css">#}
-    {#<link rel="stylesheet" href="css/bootstrap-datepicker.html">#}
-    {#<link rel="stylesheet" href="css/jquery.timepicker.html">#}
-    {#<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">#}
-    {#<link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">#}
-    {#<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">#}
-    {##}
-    {#<link rel="stylesheet" href="css/style.css">#}
-    {#<script nonce="93be8ad6-ae21-4ef9-b53b-f8f8a521bb05">(function(w,d){!function(dp,dq,dr,ds){dp[dr]=dp[dr]||{};dp[dr].executed=[];dp.zaraz={deferred:[],listeners:[]};dp.zaraz.q=[];dp.zaraz._f=function(dt){return async function(){var du=Array.prototype.slice.call(arguments);dp.zaraz.q.push({m:dt,a:du})}};for(const dv of["track","set","debug"])dp.zaraz[dv]=dp.zaraz._f(dv);dp.zaraz.init=()=>{var dw=dq.getElementsByTagName(ds)[0],dx=dq.createElement(ds),dy=dq.getElementsByTagName("title")[0];dy&&(dp[dr].t=dq.getElementsByTagName("title")[0].text);dp[dr].x=Math.random();dp[dr].w=dp.screen.width;dp[dr].h=dp.screen.height;dp[dr].j=dp.innerHeight;dp[dr].e=dp.innerWidth;dp[dr].l=dp.location.href;dp[dr].r=dq.referrer;dp[dr].k=dp.screen.colorDepth;dp[dr].n=dq.characterSet;dp[dr].o=(new Date).getTimezoneOffset();if(dp.dataLayer)for(const dC of Object.entries(Object.entries(dataLayer).reduce(((dD,dE)=>({...dD[1],...dE[1]})),{})))zaraz.set(dC[0],dC[1],{scope:"page"});dp[dr].q=[];for(;dp.zaraz.q.length;){const dF=dp.zaraz.q.shift();dp[dr].q.push(dF)}dx.defer=!0;for(const dG of[localStorage,sessionStorage])Object.keys(dG||{}).filter((dI=>dI.startsWith("_zaraz_"))).forEach((dH=>{try{dp[dr]["z_"+dH.slice(7)]=JSON.parse(dG.getItem(dH))}catch{dp[dr]["z_"+dH.slice(7)]=dG.getItem(dH)}}));dx.referrerPolicy="origin";dx.src="https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dp[dr])));dw.parentNode.insertBefore(dx,dw)};["complete","interactive"].includes(dq.readyState)?zaraz.init():dp.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>#}
-    {#<body>#}
-    {#<header role="banner">#}
-    {#<nav class="navbar navbar-expand-lg navbar-light bg-light">#}
-    {#<div class="container">#}
-    {#<a class="navbar-brand position-absolute" href="home.html">Pivot</a>#}
-    {#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">#}
-    {#<span class="navbar-toggler-icon"></span>#}
-    {#</button>#}
-    {#<div class="collapse navbar-collapse position-relative" id="navbarsExample05">#}
-    {#<ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">#}
-    {#<li class="nav-item">#}
-    {#<a class="nav-link" href="home.html">Home</a>#}
-    {#</li>#}
-    {#<li class="nav-item dropdown">#}
-    {#<a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>#}
-    {#<div class="dropdown-menu" aria-labelledby="dropdown04">#}
-    {#<a class="dropdown-item" href="services.html">Pre-Construction</a>#}
-    {#<a class="dropdown-item" href="services.html">General Construction</a>#}
-    {#<a class="dropdown-item" href="services.html">House Renovation</a>#}
-    {#<a class="dropdown-item" href="services.html">Plumbing</a>#}
-    {#</div>#}
-    {#</li>#}
-    {#<li class="nav-item">#}
-    {#<a class="nav-link" href="projects">Projects</a>#}
-    {#</li>#}
-    {#<li class="nav-item">#}
-    {#<a class="nav-link" href="news.html">News</a>#}
-    {#</li>#}
-    {#<li class="nav-item">#}
-    {#<a class="nav-link" href="about.html">About</a>#}
-    {#</li>#}
-    {#<li class="nav-item">#}
-    {#<a class="nav-link active" href="contact.html">Contact</a>#}
-    {#</li>#}
-    {#<li class="nav-item cta-btn2">#}
-    {#<a class="nav-link" href="get-quote.html">#}
-    {#<span class="d-inline-block px-4 py-2 border">Quotation</span>#}
-    {#</a>#}
-    {#</li>#}
-    {#</ul>#}
-    {#</div>#}
-    {#</div>#}
-    {#</nav>#}
-    {#</header>#}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script nonce="cea98491-f573-479a-8280-3596aaa746d7">(function (w, d) {
+        !function (dp, dq, dr, ds) {
+            dp[dr] = dp[dr] || {};
+            dp[dr].executed = [];
+            dp.zaraz = {deferred: [], listeners: []};
+            dp.zaraz.q = [];
+            dp.zaraz._f = function (dt) {
+                return async function () {
+                    var du = Array.prototype.slice.call(arguments);
+                    dp.zaraz.q.push({m: dt, a: du})
+                }
+            };
+            for (const dv of ["track", "set", "debug"]) dp.zaraz[dv] = dp.zaraz._f(dv);
+            dp.zaraz.init = () => {
+                var dw = dq.getElementsByTagName(ds)[0], dx = dq.createElement(ds),
+                    dy = dq.getElementsByTagName("title")[0];
+                dy && (dp[dr].t = dq.getElementsByTagName("title")[0].text);
+                dp[dr].x = Math.random();
+                dp[dr].w = dp.screen.width;
+                dp[dr].h = dp.screen.height;
+                dp[dr].j = dp.innerHeight;
+                dp[dr].e = dp.innerWidth;
+                dp[dr].l = dp.location.href;
+                dp[dr].r = dq.referrer;
+                dp[dr].k = dp.screen.colorDepth;
+                dp[dr].n = dq.characterSet;
+                dp[dr].o = (new Date).getTimezoneOffset();
+                if (dp.dataLayer) for (const dC of Object.entries(Object.entries(dataLayer).reduce(((dD, dE) => ({...dD[1], ...dE[1]})), {}))) zaraz.set(dC[0], dC[1], {scope: "page"});
+                dp[dr].q = [];
+                for (; dp.zaraz.q.length;) {
+                    const dF = dp.zaraz.q.shift();
+                    dp[dr].q.push(dF)
+                }
+                dx.defer = !0;
+                for (const dG of [localStorage, sessionStorage]) Object.keys(dG || {}).filter((dI => dI.startsWith("_zaraz_"))).forEach((dH => {
+                    try {
+                        dp[dr]["z_" + dH.slice(7)] = JSON.parse(dG.getItem(dH))
+                    } catch {
+                        dp[dr]["z_" + dH.slice(7)] = dG.getItem(dH)
+                    }
+                }));
+                dx.referrerPolicy = "origin";
+                dx.src = "https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(dp[dr])));
+                dw.parentNode.insertBefore(dx, dw)
+            };
+            ["complete", "interactive"].includes(dq.readyState) ? zaraz.init() : dp.addEventListener("DOMContentLoaded", zaraz.init)
+        }(w, d, "zarazData", "script");
+    })(window, document);</script>
+</head>
+<body>
 
-    <section class="inner-page">
-        <div class="slider-item py-5" style="background-image: url('{% static 'img/slider-1.jpg' %}');">
-            <div class="container">
-                <div class="row slider-text align-items-center justify-content-center text-center">
-                    <div class="col-md-7 col-sm-12 element-animate">
-                        <h1 class="text-white">Contact Us</h1>
-                    </div>
+<header role="banner">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="container">
+            <a class="navbar-brand position-absolute" href="/home">UMA construction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
+                <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Главная страница</a>
+                    </li>
+                    {#<li class="nav-item dropdown">#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services" id="dropdown04">Приемушество</a>
+                    </li>
+                    {#<a class="nav-link dropdown-toggle" href="/services" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>#}
+                    {#<div class="dropdown-menu" aria-labelledby="dropdown04">#}
+                    {#<a class="dropdown-item" href="../services.html">Pre-Construction</a>#}
+                    {#<a class="dropdown-item" href="../services.html">General Construction</a>#}
+                    {#<a class="dropdown-item" href="../services.html">House Renovation</a>#}
+                    {#<a class="dropdown-item" href="../services.html">Plumbing</a>#}
+                    {#</div>#}
+                    {#</li>#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects">Наши проекты</a>
+                    </li>
+                    {#<li class="nav-item">#}
+                    {#<a class="nav-link" href="news.html">News</a>#}
+                    {#</li>#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Контакты</a>
+                    </li>
+                    {#<li class="nav-item cta-btn2">#}
+                    {#<a class="nav-link" href="../get-quote.html">#}
+                    {#<span class="d-inline-block px-4 py-2 border">Quotation</span>#}
+                    {#</a>#}
+                    {#</li>#}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Mirrored from preview.colorlib.com/theme/pivot/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:14:08 GMT -->
+{#<head>#}
+{#<title>Pivot &mdash; Website Template by Colorlib</title>#}
+{#<meta charset="utf-8">#}
+{#<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
+{#<link href="https://fonts.googleapis.com/css?family=K2D:400,700|Niramit:300,700" rel="stylesheet">#}
+{#<link rel="stylesheet" href="css/bootstrap.css">#}
+{#<link rel="stylesheet" href="css/animate.css">#}
+{#<link rel="stylesheet" href="css/owl.carousel.min.css">#}
+{#<link rel="stylesheet" href="css/bootstrap-datepicker.html">#}
+{#<link rel="stylesheet" href="css/jquery.timepicker.html">#}
+{#<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">#}
+{#<link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">#}
+{#<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">#}
+{##}
+{#<link rel="stylesheet" href="css/style.css">#}
+{#<script nonce="93be8ad6-ae21-4ef9-b53b-f8f8a521bb05">(function(w,d){!function(dp,dq,dr,ds){dp[dr]=dp[dr]||{};dp[dr].executed=[];dp.zaraz={deferred:[],listeners:[]};dp.zaraz.q=[];dp.zaraz._f=function(dt){return async function(){var du=Array.prototype.slice.call(arguments);dp.zaraz.q.push({m:dt,a:du})}};for(const dv of["track","set","debug"])dp.zaraz[dv]=dp.zaraz._f(dv);dp.zaraz.init=()=>{var dw=dq.getElementsByTagName(ds)[0],dx=dq.createElement(ds),dy=dq.getElementsByTagName("title")[0];dy&&(dp[dr].t=dq.getElementsByTagName("title")[0].text);dp[dr].x=Math.random();dp[dr].w=dp.screen.width;dp[dr].h=dp.screen.height;dp[dr].j=dp.innerHeight;dp[dr].e=dp.innerWidth;dp[dr].l=dp.location.href;dp[dr].r=dq.referrer;dp[dr].k=dp.screen.colorDepth;dp[dr].n=dq.characterSet;dp[dr].o=(new Date).getTimezoneOffset();if(dp.dataLayer)for(const dC of Object.entries(Object.entries(dataLayer).reduce(((dD,dE)=>({...dD[1],...dE[1]})),{})))zaraz.set(dC[0],dC[1],{scope:"page"});dp[dr].q=[];for(;dp.zaraz.q.length;){const dF=dp.zaraz.q.shift();dp[dr].q.push(dF)}dx.defer=!0;for(const dG of[localStorage,sessionStorage])Object.keys(dG||{}).filter((dI=>dI.startsWith("_zaraz_"))).forEach((dH=>{try{dp[dr]["z_"+dH.slice(7)]=JSON.parse(dG.getItem(dH))}catch{dp[dr]["z_"+dH.slice(7)]=dG.getItem(dH)}}));dx.referrerPolicy="origin";dx.src="https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dp[dr])));dw.parentNode.insertBefore(dx,dw)};["complete","interactive"].includes(dq.readyState)?zaraz.init():dp.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>#}
+{#<body>#}
+{#<header role="banner">#}
+{#<nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#<div class="container">#}
+{#<a class="navbar-brand position-absolute" href="home.html">Pivot</a>#}
+{#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">#}
+{#<span class="navbar-toggler-icon"></span>#}
+{#</button>#}
+{#<div class="collapse navbar-collapse position-relative" id="navbarsExample05">#}
+{#<ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">#}
+{#<li class="nav-item">#}
+{#<a class="nav-link" href="home.html">Home</a>#}
+{#</li>#}
+{#<li class="nav-item dropdown">#}
+{#<a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>#}
+{#<div class="dropdown-menu" aria-labelledby="dropdown04">#}
+{#<a class="dropdown-item" href="services.html">Pre-Construction</a>#}
+{#<a class="dropdown-item" href="services.html">General Construction</a>#}
+{#<a class="dropdown-item" href="services.html">House Renovation</a>#}
+{#<a class="dropdown-item" href="services.html">Plumbing</a>#}
+{#</div>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link" href="projects">Projects</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link" href="news.html">News</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link" href="about.html">About</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#<a class="nav-link active" href="contact.html">Contact</a>#}
+{#</li>#}
+{#<li class="nav-item cta-btn2">#}
+{#<a class="nav-link" href="get-quote.html">#}
+{#<span class="d-inline-block px-4 py-2 border">Quotation</span>#}
+{#</a>#}
+{#</li>#}
+{#</ul>#}
+{#</div>#}
+{#</div>#}
+{#</nav>#}
+{#</header>#}
+
+<section class="inner-page">
+    <div class="slider-item py-5" style="background-image: url('{% static 'img/slider-1.jpg' %}');">
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center text-center">
+                <div class="col-md-7 col-sm-12 element-animate">
+                    <h1 class="text-white">Свяжитесь с нами</h1>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <form action="#" method="post">
-                         {% csrf_token %}
-                        <div class="row">
-                            {#<div class="col-md-6 form-group">#}
-                            {#<label for="fname">First Name</label>#}
-                            {#<input type="text" class="form-control form-control-lg" id="fname">#}
-                            {#</div>#}
-                            <div class="col-md-12 form-group">
-                                <label for="lname">Name</label>
-                                <input type="text" class="form-control form-control-lg" name="name" id="lname">
-                            </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        {#<div class="col-md-6 form-group">#}
+                        {#<label for="fname">First Name</label>#}
+                        {#<input type="text" class="form-control form-control-lg" id="fname">#}
+                        {#</div>#}
+                        <div class="col-md-12 form-group">
+                            <label for="lname">Name</label>
+                            <input type="text" class="form-control form-control-lg" name="name" id="lname">
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <label for="email">Phone number</label>
-                                <input type="text" name="number" id="email" class="form-control form-control-lg">
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="email">Phone number</label>
+                            <input type="text" name="number" id="email" class="form-control form-control-lg">
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <label for="message">Write Message</label>
-                                <textarea name="message" id="message" class="form-control form-control-lg" cols="30"
-                                          rows="8"></textarea>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="message">Write Message</label>
+                            <textarea name="message" id="message" class="form-control form-control-lg" cols="30"
+                                      rows="8"></textarea>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="submit" value="Send Message" class="btn btn-primary btn-lg btn-block">
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="submit" value="Send Message" class="btn btn-primary btn-lg btn-block">
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
+              </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <h5 class="text-uppercase mb-3">Адрес:</h5>
+                <p class="mb-5">г.Ташкент, Яшнабадский район, <br> Амир Темур МФЙ, <br> ул.Темирчи 2а</p>
+                <h5 class="text-uppercase mb-3">Напишите нам по адресу</h5>
+                <p class="mb-5"><span>
+                <p class="mb-5">ulugbekallabergenov@yahoo.com</p>
 
-{% endblock %}
+                        </span>
+{#                    <br> ulugbekallabergenov@yahoo.com #}
+{#                    <a href="https://preview.colorlib.com/cdn-cgi/l/email-protection#20435553544f4d455260594f5552444f4d41494e0e434f4d"><span#}
+{#                            class="__cf_email__" data-cfemail="80e3f5f3f4efede5f2c0f9eff5f2e4efede1e9eeaee3efed">[email&#160;protected]</span></a>#}
+                </p>
+                <h5 class="text-uppercase mb-3">Позвоните нам</h5>
+                <p class="mb-5"> +99 890 318 29 92 </p>
+
+{#                <p class="mb-5">Phone: (+1) 435 3533 <br> Mobile: (+1) 435 3533 <br> Fax: (+1) 435 3534</p>#}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container cta-overlap">
+    <div class="text d-flex">
+        <h2 class="h3">Свяжитесь с нами для воплощение ваших проектов и запросите смету</h2>
+        <div class="ml-auto btn-wrap">
+            <a href="/contact" class="btn-cta btn btn-outline-white">Свяжитесь с нами</a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer bg-dark" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <p>
+
+                    {#Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>#}
+
+                </p>
+            </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled footer-link">
+                    <li><span class="mr-3 d-block">Адрес:</span><span class="text-white">г.Ташкент, Яшнабадский район, Амир Темур МФЙ, ул.Темирчи 2а</span>
+                    </li>
+                    <li><span class="mr-3 d-block">Контакты:</span><span class="text-white">+99 890 318 29 92</span>
+                    </li>
+                    {#<li><span class="mr-3 d-block">Fax:</span><span class="text-white">+1 242 4942 290</span></li>#}
+                    <li><span class="mr-3 d-block">E-mail:</span><span
+                            class="text-white">ulugbekallabergenov@yahoo.com</span></li>
+                    {#<li><span class="mr-3 d-block">E-mail:</span><span class="text-white">ulugbekallabergenov@yahoo.com<a href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a13141c153a03150f081e15171b131454191517">[email&#160;protected]</a></span></li>#}
+
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="text-white">Быстрые ссылки</h3>
+                <ul class="list-unstyled footer-link">
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/services">Приемушество</a></li>
+                    <li><a href="/projects">Наши проекты</a></li>
+                    <li><a href="/contact">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="text-white">Social</h3>
+                <ul class="list-unstyled footer-link d-flex footer-social">
+                    <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+{#                    <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>#}
+                    <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div id="loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#f4b214"/>
+    </svg>
+</div>
+<script data-cfasync="false"
+        src="https://preview.colorlib.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+        data-cf-beacon='{"rayId":"842612156f920ee4","b":1,"version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/pivot/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:13:52 GMT -->
+</html>

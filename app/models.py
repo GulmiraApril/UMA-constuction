@@ -20,20 +20,7 @@ class Project(models.Model):
         return f'name: {self.project_name}'
 
 
-class AboutCompany(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
 
-    def __str__(self):
-        return f'name: {self.title}'
-
-
-class MainPage(models.Model):
-    moto = models.TextField()
-    main_image = models.ImageField(upload_to='images/')
-
-    def __str__(self):
-        return f'name: {self.moto}'
 
 
 

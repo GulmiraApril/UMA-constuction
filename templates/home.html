@@ -1,150 +1,509 @@
-{% extends 'layouts/base.html' %}
+{#{% extends 'layouts/base.html' %}#}
+{#{% block content %}#}
 {% load static %}
-{% block content %}
+<head>
+    <title>UMA construction &mdash; Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=K2D:400,700|Niramit:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.html' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.html' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script nonce="cea98491-f573-479a-8280-3596aaa746d7">(function (w, d) {
+        !function (dp, dq, dr, ds) {
+            dp[dr] = dp[dr] || {};
+            dp[dr].executed = [];
+            dp.zaraz = {deferred: [], listeners: []};
+            dp.zaraz.q = [];
+            dp.zaraz._f = function (dt) {
+                return async function () {
+                    var du = Array.prototype.slice.call(arguments);
+                    dp.zaraz.q.push({m: dt, a: du})
+                }
+            };
+            for (const dv of ["track", "set", "debug"]) dp.zaraz[dv] = dp.zaraz._f(dv);
+            dp.zaraz.init = () => {
+                var dw = dq.getElementsByTagName(ds)[0], dx = dq.createElement(ds),
+                    dy = dq.getElementsByTagName("title")[0];
+                dy && (dp[dr].t = dq.getElementsByTagName("title")[0].text);
+                dp[dr].x = Math.random();
+                dp[dr].w = dp.screen.width;
+                dp[dr].h = dp.screen.height;
+                dp[dr].j = dp.innerHeight;
+                dp[dr].e = dp.innerWidth;
+                dp[dr].l = dp.location.href;
+                dp[dr].r = dq.referrer;
+                dp[dr].k = dp.screen.colorDepth;
+                dp[dr].n = dq.characterSet;
+                dp[dr].o = (new Date).getTimezoneOffset();
+                if (dp.dataLayer) for (const dC of Object.entries(Object.entries(dataLayer).reduce(((dD, dE) => ({...dD[1], ...dE[1]})), {}))) zaraz.set(dC[0], dC[1], {scope: "page"});
+                dp[dr].q = [];
+                for (; dp.zaraz.q.length;) {
+                    const dF = dp.zaraz.q.shift();
+                    dp[dr].q.push(dF)
+                }
+                dx.defer = !0;
+                for (const dG of [localStorage, sessionStorage]) Object.keys(dG || {}).filter((dI => dI.startsWith("_zaraz_"))).forEach((dH => {
+                    try {
+                        dp[dr]["z_" + dH.slice(7)] = JSON.parse(dG.getItem(dH))
+                    } catch {
+                        dp[dr]["z_" + dH.slice(7)] = dG.getItem(dH)
+                    }
+                }));
+                dx.referrerPolicy = "origin";
+                dx.src = "https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(dp[dr])));
+                dw.parentNode.insertBefore(dx, dw)
+            };
+            ["complete", "interactive"].includes(dq.readyState) ? zaraz.init() : dp.addEventListener("DOMContentLoaded", zaraz.init)
+        }(w, d, "zarazData", "script");
+    })(window, document);</script>
+</head>
+<body>
+
+<header role="banner">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="container">
+            <a class="navbar-brand position-absolute" href="/home">UMA construction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
+                <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Главная страница</a>
+                    </li>
+                    {#<li class="nav-item dropdown">#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services" id="dropdown04">Приемушество</a>
+                    </li>
+                    {#<a class="nav-link dropdown-toggle" href="/services" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>#}
+                    {#<div class="dropdown-menu" aria-labelledby="dropdown04">#}
+                    {#<a class="dropdown-item" href="../services.html">Pre-Construction</a>#}
+                    {#<a class="dropdown-item" href="../services.html">General Construction</a>#}
+                    {#<a class="dropdown-item" href="../services.html">House Renovation</a>#}
+                    {#<a class="dropdown-item" href="../services.html">Plumbing</a>#}
+                    {#</div>#}
+                    {#</li>#}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects">Наши проекты</a>
+                    </li>
+                    {#<li class="nav-item">#}
+                    {#<a class="nav-link" href="news.html">News</a>#}
+                    {#</li>#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Контакты</a>
+                    </li>
+                    {#<li class="nav-item cta-btn2">#}
+                    {#<a class="nav-link" href="../get-quote.html">#}
+                    {#<span class="d-inline-block px-4 py-2 border">Quotation</span>#}
+                    {#</a>#}
+                    {#</li>#}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <section class="home-slider owl-carousel">
-<div class="slider-item" style="background-image: url('{% static "img/slider-2.jpg" %}');">
-<div class="container">
-<div class="row slider-text align-items-center justify-content-center text-center">
-<div class="col-md-7 col-sm-12 element-animate">
-<h1 class="mb-4"> Fastest-Growing Construction Company</h1>
-<p class="mb-0"><a href="#" target="_blank" class="btn btn-primary">Get Started</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="slider-item" style="background-image: url('{% static "img/slider-1.jpg" %}');">
-<div class="container">
-<div class="row slider-text align-items-center justify-content-center text-center">
-<div class="col-md-8 col-sm-12 element-animate">
-<h1 class="mb-4">We Are Leading The Way Construction Works</h1>
-<p class="mb-0"><a href="#" target="_blank" class="btn btn-primary">Get Started</a></p>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <div class="slider-item" style="background-image: url('{% static "img/slider-2.jpg" %}');">
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center text-center">
+                <div class="col-md-7 col-sm-12 element-animate">
+                    <h1 class="mb-4"> Железобетонное качество !</h1>
+                    <p class="mb-0"><a href="/contact" target="_blank" class="btn btn-primary">Cвязаться с нами</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider-item" style="background-image: url('{% static "img/slider-1.jpg" %}');">
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center text-center">
+                <div class="col-md-8 col-sm-12 element-animate">
+                    <h1 class="mb-4">Мы лидеры в строительных работах</h1>
+                    <p class="mb-0"><a href="/contact" target="_blank" class="btn btn-primary">Cвязаться с нами</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{#</section>#}
+
+{#{% for main_page in main_page %}#}
+{##}
+{#    <section class="home-slider owl-carousel">#}
+{#    <div class="slider-item" style="background-image: url({{ main_page.main_image.url }});">#}
+{#        <div class="container">#}
+{#            <div class="row slider-text align-items-center justify-content-center text-center">#}
+{#                <div class="col-md-7 col-sm-12 element-animate">#}
+{#                    <h1 class="mb-4">{{ main_page.moto }}</h1>#}
+{#                    <p class="mb-0"><a href="/contact" target="_blank" class="btn btn-primary">Cвязаться с нами</a>#}
+{#                    </p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endfor %}#}
+{#        <div class="slider-item" style="background-image: url('{% static "img/slider-1.jpg" %}');">#}
+{#            <div class="container">#}
+{#                <div class="row slider-text align-items-center justify-content-center text-center">#}
+{#                    <div class="col-md-8 col-sm-12 element-animate">#}
+{#                        <h1 class="mb-4">Высококвалифициорованные#}
+{#                            специалисты </h1>#}
+{#                        <p class="mb-0"><a href="#" target="_blank" class="btn btn-primary">Get Started</a></p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#</section>#}
 
 <section class="section bg-light">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-md-6 pr-lg-5 mb-5 mb-md-0  element-animate">
-<div class="pr-lg-5">
-<h2 class="text-uppercase heading border-bottom mb-4 text-left">We Are Expert in <br>Construction Field</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam similique repellat dignissimos, omnis at ducimus pariatur odio praesentium eveniet porro sit quod, sequi unde atque magnam voluptate quae voluptatum. Delectus.</p>
-<p>At sed impedit, ab a officia blanditiis, fuga commodi delectus veniam architecto in nihil numquam eum maiores. Amet nihil, dolorum sit vitae fugit maxime earum optio culpa eum. Voluptates, labore.</p>
-</div>
-</div>
-<div class="col-md-6  element-animate">
-<img src="{% static 'img/work_thumb_1.jpg' %}" alt class="img-fluid">
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 pr-lg-5 mb-5 mb-md-0  element-animate">
+                <div class="pr-lg-5">
+                    <h2 class="text-uppercase heading border-bottom mb-4 text-left">Мы являемся экспертами <br>в
+                        области строительства</h2>
+                    <p>ООО «UMA CONSTRUCTION» - строительная подрядная компания, осуществляющая свою деятельность в
+                        области промышленного и гражданского строительства. За время существования компании
+                        сформировалась сильная команда высококвалифицированных специалистов, обладающих необходимыми
+                        знаниями и опытом.</p>
+                    <p>На сегодняшний день ООО «UMA CONSTRUCTION» – это динамично развивающая строительная компания,
+                        за плечами которой участие в крупных проектах по строительству и реконструкции.</p>
+                </div>
+            </div>
+            <div class="col-md-6  element-animate">
+                <img src="{% static 'img/work_thumb_1.jpg' %}" alt class="img-fluid">
+            </div>
+        </div>
+    </div>
 </section>
+{# PROEKTLAR#}
+{#<section class="section border-t">#}
+{#    <div class="container">#}
+{#        <div class="row justify-content-center mb-5 element-animate">#}
+{#            <div class="col-md-8 text-center">#}
+{#                <h2 class="text-uppercase heading border-bottom mb-4">Недавние Проекты</h2>#}
+                {#<p class="mb-3 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>#}
+                {#<p><a href="/projects" class="btn btn-primary">Посмотреть все проекты</a></p>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="row no-gutters">#}
+{#            {% for project in project %}#}
+{#                <div class="col-md-4 element-animate">#}
+{#                    <a href="/projects/{{ project.id }}" class="link-thumbnail">#}
+{#                        <h3>{{ projects.project_name }}</h3>#}
+{#                        <span class="ion-plus icon"></span>#}
+{#                        <img src="{{ project.project_image.url }}" alt="Image placeholder" class="img-fluid">#}
+{#                    </a>#}
+{#                </div>#}
+{#                <div class="col-md-4 element-animate">#}
+{#                <a href="/projects-single/{{ project.id }}" class="link-thumbnail">#}
+{#            {% endfor %}#}
+{#            <p><a href="/projects" class="btn btn-primary">Посмотреть все проекты</a></p>#}
+
 <section class="section border-t">
-<div class="container">
-<div class="row justify-content-center mb-5 element-animate">
-<div class="col-md-8 text-center">
-<h2 class="text-uppercase heading border-bottom mb-4">Recent Projects</h2>
-<p class="mb-3 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-<p><a href="/projects" class="btn btn-primary">See All Projects</a></p>
-</div>
-</div>
-<div class="row no-gutters">
-<div class="col-md-4 element-animate">
-<a href="/projects-single" class="link-thumbnail">
-<h3>House Renovation</h3>
-<span class="ion-plus icon"></span>
-<img src="{% static 'img/work_thumb_1.jpg' %}" alt="Image placeholder" class="img-fluid">
-</a>
-</div>
-<div class="col-md-4 element-animate">
-<a href="/projects-single" class="link-thumbnail">
-<h3>General Construction Building</h3>
-<span class="ion-plus icon"></span>
-<img src="{% static 'img/work_thumb_2.jpg' %}" alt="Image placeholder" class="img-fluid">
-</a>
-</div>
-<div class="col-md-4 element-animate">
-<a href="/projects-single" class="link-thumbnail">
-<h3>Pre-Construction</h3>
-<span class="ion-plus icon"></span>
-<img src="{% static 'img/work_thumb_3.jpg' %}" alt="Image placeholder" class="img-fluid">
-</a>
-</div>
-<div class="col-md-4 element-animate">
-<a href="/projects-single" class="link-thumbnail">
-<h3>House Renovation</h3>
-<span class="ion-plus icon"></span>
-<img src="{% static 'img/work_thumb_3.jpg' %}" alt="Image placeholder" class="img-fluid">
-</a>
-</div>
-<div class="col-md-4 element-animate">
-<a href="/projects-single" class="link-thumbnail">
-<h3>General Construction Building</h3>
-<span class="ion-plus icon"></span>
-<img src="{% static 'img/work_thumb_1.jpg' %}" alt="Image placeholder" class="img-fluid">
-</a>
-</div>
-<div class="col-md-4 element-animate">
-<a href="/projects-single" class="link-thumbnail">
-<h3>Pre-Construction</h3>
-<span class="ion-plus icon"></span>
-<img src="{% static 'img/work_thumb_2.jpg' %}" alt="Image placeholder" class="img-fluid">
-</a>
-</div>
-</div>
-</div>
+                {% for project in projects %}
+
+    <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+            <div class="col-md-8 text-center">
+                <h2 class="text-uppercase heading border-bottom mb-4">Недавние Проекты</h2>
+                <p class="mb-3 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit,
+                    necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+                <p><a href="/projects" class="btn btn-primary">Посмотреть все проекты</a></p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-4 element-animate">
+{#                {% for project in projects %}#}
+                <a href="/project/{{ project.id }}" class="link-thumbnail">
+                    <h3>{{ project.project_name }}</h3>
+                    <span class="ion-plus icon"></span>
+                    <img src="{{ project.project_image.url }}" alt="Image placeholder" class="img-fluid">
+                </a>
+                {% endfor %}
+            </div>
+
+{#            <div class="col-md-4 element-animate">#}
+{#                <a href="works-single.html" class="link-thumbnail">#}
+{#                    <h3>General Construction Building</h3>#}
+{#                    <span class="ion-plus icon"></span>#}
+{#                    <img src="img/work_thumb_2.jpg" alt="Image placeholder" class="img-fluid">#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-md-4 element-animate">#}
+{#                <a href="works-single.html" class="link-thumbnail">#}
+{#                    <h3>Pre-Construction</h3>#}
+{#                    <span class="ion-plus icon"></span>#}
+{#                    <img src="img/work_thumb_3.jpg" alt="Image placeholder" class="img-fluid">#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-md-4 element-animate">#}
+{#                <a href="works-single.html" class="link-thumbnail">#}
+{#                    <h3>House Renovation</h3>#}
+{#                    <span class="ion-plus icon"></span>#}
+{#                    <img src="img/work_thumb_3.jpg" alt="Image placeholder" class="img-fluid">#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-md-4 element-animate">#}
+{#                <a href="works-single.html" class="link-thumbnail">#}
+{#                    <h3>General Construction Building</h3>#}
+{#                    <span class="ion-plus icon"></span>#}
+{#                    <img src="img/work_thumb_1.jpg" alt="Image placeholder" class="img-fluid">#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-md-4 element-animate">#}
+{#                <a href="works-single.html" class="link-thumbnail">#}
+{#                    <h3>Pre-Construction</h3>#}
+{#                    <span class="ion-plus icon"></span>#}
+{#                    <img src="img/work_thumb_2.jpg" alt="Image placeholder" class="img-fluid">#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+    </div>
 </section>
 
-<section class="section">
-<div class="container">
-<div class="row justify-content-center mb-5 element-animate">
-<div class="col-md-8 text-center">
-<h2 class="text-uppercase heading border-bottom mb-4">Services</h2>
-<p class="mb-3 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-</div>
-</div>
-<div class="row mb-5">
-<div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-<div class="media d-block media-feature text-center">
-<span class="flaticon-blueprint icon"></span>
-<div class="media-body">
-<h3 class="mt-0 text-black">Pre-Construction</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-<div class="media d-block media-feature text-center">
-<span class="flaticon-building-1 icon"></span>
-<div class="media-body">
-<h3 class="mt-0 text-black">House Renovation</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-<div class="media d-block media-feature text-center">
-<span class="flaticon-crane icon"></span>
-<div class="media-body">
-<h3 class="mt-0 text-black">General Contracting</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>
-</div>
-</div>
-</div>
-</div>
+            {#<h3>General Construction Building</h3>#}
+            {#<span class="ion-plus icon"></span>#}
+            {#<img src="{% static 'img/work_thumb_2.jpg' %}" alt="Image placeholder" class="img-fluid">#}
+            {#</a>#}
+            {#</div>#}
+            {#<div class="col-md-4 element-animate">#}
+            {#<a href="/projects-single" class="link-thumbnail">#}
+            {#<h3>Pre-Construction</h3>#}
+            {#<span class="ion-plus icon"></span>#}
+            {#<img src="{% static 'img/work_thumb_3.jpg' %}" alt="Image placeholder" class="img-fluid">#}
+            {#</a>#}
+            {#</div>#}
+            {#<div class="col-md-4 element-animate">#}
+            {#<a href="/projects-single" class="link-thumbnail">#}
+            {#<h3>House Renovation</h3>#}
+            {#<span class="ion-plus icon"></span>#}
+            {#<img src="{% static 'img/work_thumb_3.jpg' %}" alt="Image placeholder" class="img-fluid">#}
+            {#</a>#}
+            {#</div>#}
+            {#<div class="col-md-4 element-animate">#}
+            {#<a href="/projects-single" class="link-thumbnail">#}
+            {#<h3>General Construction Building</h3>#}
+            {#<span class="ion-plus icon"></span>#}
+            {#<img src="{% static 'img/work_thumb_1.jpg' %}" alt="Image placeholder" class="img-fluid">#}
+            {#</a>#}
+            {#</div>#}
+            {#<div class="col-md-4 element-animate">#}
+            {#<a href="/projects-single" class="link-thumbnail">#}
+            {#<h3>Pre-Construction</h3>#}
+            {#<span class="ion-plus icon"></span>#}
+            {#<img src="{% static 'img/work_thumb_2.jpg' %}" alt="Image placeholder" class="img-fluid">#}
+            {#</a>#}
+            {#</div>#}
+            {#</div>#}
+            {#</div>#}
+            {#</section>#}
+            {##}
+            {#<section class="section">#}
+            {#<div class="container">#}
+            {#<div class="row justify-content-center mb-5 element-animate">#}
+            {#<div class="col-md-8 text-center">#}
+            {#<h2 class="text-uppercase heading border-bottom mb-4">Services</h2>#}
+            {#<p class="mb-3 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>#}
+            {#</div>#}
+            {#</div>#}
+            {#                <div class="row mb-5">#}
+            {#                    <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">#}
+            {#                        <div class="media d-block media-feature text-center">#}
+            {#                            <span class="flaticon-blueprint icon"></span>#}
+            {#                            <div class="media-body">#}
+            {#                                <h3 class="mt-0 text-black">Pre-Construction</h3>#}
+            {#                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>#}
+            {#                                <p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                    <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">#}
+            {#                        <div class="media d-block media-feature text-center">#}
+            {#                            <span class="flaticon-building-1 icon"></span>#}
+            {#                            <div class="media-body">#}
+            {#                                <h3 class="mt-0 text-black">House Renovation</h3>#}
+            {#                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>#}
+            {#                                <p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                    <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">#}
+            {#                        <div class="media d-block media-feature text-center">#}
+            {#                            <span class="flaticon-crane icon"></span>#}
+            {#                            <div class="media-body">#}
+            {#                                <h3 class="mt-0 text-black">General Contracting</h3>#}
+            {#                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>#}
+            {#                                <p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {##}
+            {#                <div class="row justify-content-center element-animate">#}
+            {#                    <div class="col-md-4"><p><a href="/services" class="btn btn-primary btn-block">View All Services</a>#}
+            {#                    </p></div>#}
+            {#                </div>#}
+            {#                </div>#}
+            {#    </section>#}
 
-<div class="row justify-content-center element-animate">
-<div class="col-md-4"><p><a href="/services" class="btn btn-primary btn-block">View All Services</a></p></div>
-</div>
-</div>
-</section>
+
+            <section class="inner-page">
+                <div class="slider-item py-5" style="background-image: url('{% static "img/slider-2.jpg" %}');">
+                    <div class="container">
+                        <div class="row slider-text align-items-center justify-content-center text-center">
+                            <div class="col-md-7 col-sm-12 element-animate">
+                                <h1 class="text-white">Наше приемушество</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
+                            <div class="media d-block media-feature text-center">
+                                <span class="flaticon-blueprint icon"></span>
+                                <div class="media-body">
+                                    <h3 class="mt-0 text-black">Передовые технологии</h3>
+                                    <p>Передовые строительно-монтажные технологии что обеспечивает безупречный
+                                        результат.</p>
+                                    {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
+                            <div class="media d-block media-feature text-center">
+                                <span class="flaticon-building-1 icon"></span>
+                                <div class="media-body">
+                                    <h3 class="mt-0 text-black">Высококвалифициорованные специалисты</h3>
+                                    <p>Благодаря которым мы успешно выполняем необходимые задачи и завершаем проекты в
+                                        точно намеченный срок.</p>
+                                    {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
+                            <div class="media d-block media-feature text-center">
+                                <span class="flaticon-crane icon"></span>
 
 
+                                <div class="media-body">
+                                    <h3 class="mt-0 text-black">Многопрофильность</h3>
+                                    <p>ООО «UMA CONSTRUCTION» – является многопрофильной строительной организацией,
+                                        которая готова приступить к реализации сложных комбинированных задач.</p>
+                                    {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+                                </div>
+                            </div>
+                        </div>
+                        <section class="container cta-overlap">
+                            <div class="text d-flex">
+                                <h2 class="h3">Свяжитесь с нами для воплощение ваших проектов и запросите смету</h2>
+                                <div class="ml-auto btn-wrap">
+                                    <a href="/contact" class="btn-cta btn btn-outline-white">Свяжитесь с нами</a>
+                                </div>
+                            </div>
+                        </section>
 
-{% endblock %}
+                        <footer class="site-footer bg-dark" role="contentinfo">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <p>
+
+                                            {#Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>#}
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <ul class="list-unstyled footer-link">
+                                            <li><span class="mr-3 d-block">Адрес:</span><span class="text-white">г.Ташкент, Яшнабадский район, Амир Темур МФЙ, ул.Темирчи 2а</span>
+                                            </li>
+                                            <li><span class="mr-3 d-block">Контакты:</span><span class="text-white">+99 890 318 29 92</span>
+                                            </li>
+                                            {#<li><span class="mr-3 d-block">Fax:</span><span class="text-white">+1 242 4942 290</span></li>#}
+                                            <li><span class="mr-3 d-block">E-mail:</span><span
+                                                    class="text-white">ulugbekallabergenov@yahoo.com</span></li>
+                                            {#<li><span class="mr-3 d-block">E-mail:</span><span class="text-white">ulugbekallabergenov@yahoo.com<a href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a13141c153a03150f081e15171b131454191517">[email&#160;protected]</a></span></li>#}
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3 class="text-white">Быстрые ссылки</h3>
+                                        <ul class="list-unstyled footer-link">
+                                            <li><a href="/about">О нас</a></li>
+                                            <li><a href="/services">Приемушество</a></li>
+                                            <li><a href="/projects">Наши проекты</a></li>
+                                            <li><a href="/contact">Контакты</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h3 class="text-white">Social</h3>
+                                        <ul class="list-unstyled footer-link d-flex footer-social">
+                                            <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+                                            <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+                                            {#                    <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>#}
+                                            <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+
+
+                        <div id="loader" class="show fullscreen">
+                            <svg class="circular" width="48px" height="48px">
+                                <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4"
+                                        stroke="#eeeeee"/>
+                                <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4"
+                                        stroke-miterlimit="10"
+                                        stroke="#f4b214"/>
+                            </svg>
+                        </div>
+                        <script data-cfasync="false"
+                                src="https://preview.colorlib.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+                        <script src="{% static 'js/popper.min.js' %}"></script>
+                        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+                        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+                        <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+                        <script src="{% static 'js/main.js' %}"></script>
+
+                        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+                        <script>
+                            window.dataLayer = window.dataLayer || [];
+
+                            function gtag() {
+                                dataLayer.push(arguments);
+                            }
+
+                            gtag('js', new Date());
+
+                            gtag('config', 'UA-23581568-13');
+                        </script>
+                        <script defer
+                                src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+                                integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+                                data-cf-beacon='{"rayId":"842612156f920ee4","b":1,"version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+                                crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/pivot/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:13:52 GMT -->
+</html>
+
+
+{#{% endblock %}#}

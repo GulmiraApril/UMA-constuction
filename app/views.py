@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import AboutCompany, Contact, Project, MainPage
+from .models import Contact, Project
 import requests
 from django.http import HttpResponse
 
@@ -7,9 +7,12 @@ from django.http import HttpResponse
 def home_view(request):
     data = request.GET
 
-    main = AboutCompany.objects.all()
+    project = Project.objects.all()
+
     p = {
-        'main': main
+
+        'project': project,
+
     }
     return render(request, 'home.html', p)
 
@@ -28,8 +31,8 @@ def contact_view(request):
         obj = Contact.objects.create(name=data['name'], phone_number=data['number'], message=data['message'])
 
         obj.save()
-        url = f"https://api.telegram.org/bot6298724589:AAHQn4M1fxewf_9bSlDQAkPi5jvS2GzPGnk/sendMessage?chat_id=748076346&text=you have a notification from UMA construction: {data['message']} ." \
-              f" Phone number of a sender is {data['number']}"
+        url = f"https://api.telegram.org/bot6298724589:AAHQn4M1fxewf_9bSlDQAkPi5jvS2GzPGnk/sendMessage?chat_id=748076346&text=you have a notification from UMA construction: " \
+              f" Phone number of a sender is {data['number']}, message : {data['message']}"
         requests.get(url)
         return redirect('/')
 
@@ -39,7 +42,7 @@ def contact_view(request):
 def project_view(request):
     data = request.GET
 
-    main = AboutCompany.objects.all()
+    main = Project.objects.all()
     p = {
         'main': main
     }

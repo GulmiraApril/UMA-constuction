@@ -1,14 +1,8 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import AboutCompany, Contact, Project, MainPage
+from .models import Contact, Project
 
 
-class AboutCompanyAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description')
-    list_filter = ('title',)
-
-
-admin.site.register(AboutCompany, AboutCompanyAdmin)
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -32,14 +26,3 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 
 
-class MainAdmin(admin.ModelAdmin):
-    list_display = ('moto', 'main_image', 'preview')
-    list_filter = ('moto',)
-
-    def preview(self, obj):
-        html_code = f"""<img src={obj.main_image.url} alt="No image" width="50" height="60">"""
-
-        return format_html(html_code)
-
-
-admin.site.register(MainPage, MainAdmin)
