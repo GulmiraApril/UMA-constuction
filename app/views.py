@@ -25,6 +25,54 @@ def about_view(request):
     return render(request, "about.html")
 
 
+def project_view(request):
+    data = request.GET
+
+    project = Project.objects.all()
+
+    p = {
+        'project': project
+    }
+    return render(request, 'projects.html', p)
+
+
+def project_single_view(request, pk):
+    project = Project.objects.get(id=pk)
+
+    d = {
+        'project': project,
+
+    }
+    if request.method == "POST":
+        data = request.POST
+        obj = Contact.objects.create(name=data['name'], phone_number=data['number'], message=data['message'])
+
+        obj.save()
+
+        return render(request=request, template_name="projects-single.html", context=d)
+
+    return render(request=request, template_name="projects-single.html", context=d)
+
+
+# def projects_single_view(request, pk):
+#     # Retrieve the first project with the given primary key (pk).
+#     project = Project.objects.filter(id=pk).first()
+#
+#     d = {
+#         'project': project,
+#     }
+#
+#     if request.method == "POST":
+#         data = request.POST
+#         obj = Project.objects.create(project_name=data['name'], description=data['description'],
+#                                      project_image=data['image'])
+#         obj.save()
+#
+#         return redirect(f'/projects/{pk}')
+#
+#     return render(request=request, template_name="projects-single.html", context=d)
+
+
 def contact_view(request):
     if request.method == "POST":
         data = request.POST
@@ -38,30 +86,20 @@ def contact_view(request):
 
     return render(request, "contact.html")
 
-
-def project_view(request):
-    data = request.GET
-
-    main = Project.objects.all()
-    p = {
-        'main': main
-    }
-    return render(request, 'projects.html', p)
-
-
-def projects_single_view(request, pk):
-    project = Project.objects.get(id=pk)
-    d = {
-        'project': project
-
-    }
-
-    if request.method == "POST":
-        data = request.POST
-        obj = Project.objects.create(project_name=data['name'], description=data['description'])
-
-        obj.save()
-
-        return redirect(f'/projects/{pk}')
-
-    return render(request=request, template_name="projects-single.html", context=d)
+# def projects_single_view(request, pk):
+#     project = Project.objects.get(id=pk)
+#     d = {
+#         'project': project
+#
+#     }
+#
+#     if request.method == "POST":
+#         data = request.POST
+#         obj = Project.objects.create(project_name=data['name'], description=data['description'],
+#                                      project_image=data['image'])
+#
+#         obj.save()
+#
+#         return redirect(f'/projects/{pk}')
+#
+#     return render(request=request, template_name="projects-single.html", context=d)

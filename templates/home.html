@@ -1,119 +1,8 @@
-{% load static %}
-<head>
-    <title>UMA construction &mdash; Website Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=K2D:400,700|Niramit:300,700" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.html' %}">
-        <link rel="stylesheet" href="{% static 'css/jquery.timepicker.html' %}">
-        <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
-        <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
-        <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+{% extends 'layouts/base.html' %}
 
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script nonce="cea98491-f573-479a-8280-3596aaa746d7">(function (w, d) {
-        !function (dp, dq, dr, ds) {
-            dp[dr] = dp[dr] || {};
-            dp[dr].executed = [];
-            dp.zaraz = {deferred: [], listeners: []};
-            dp.zaraz.q = [];
-            dp.zaraz._f = function (dt) {
-                return async function () {
-                    var du = Array.prototype.slice.call(arguments);
-                    dp.zaraz.q.push({m: dt, a: du})
-                }
-            };
-            for (const dv of ["track", "set", "debug"]) dp.zaraz[dv] = dp.zaraz._f(dv);
-            dp.zaraz.init = () => {
-                var dw = dq.getElementsByTagName(ds)[0], dx = dq.createElement(ds),
-                    dy = dq.getElementsByTagName("title")[0];
-                dy && (dp[dr].t = dq.getElementsByTagName("title")[0].text);
-                dp[dr].x = Math.random();
-                dp[dr].w = dp.screen.width;
-                dp[dr].h = dp.screen.height;
-                dp[dr].j = dp.innerHeight;
-                dp[dr].e = dp.innerWidth;
-                dp[dr].l = dp.location.href;
-                dp[dr].r = dq.referrer;
-                dp[dr].k = dp.screen.colorDepth;
-                dp[dr].n = dq.characterSet;
-                dp[dr].o = (new Date).getTimezoneOffset();
-                if (dp.dataLayer) for (const dC of Object.entries(Object.entries(dataLayer).reduce(((dD, dE) => ({...dD[1], ...dE[1]})), {}))) zaraz.set(dC[0], dC[1], {scope: "page"});
-                dp[dr].q = [];
-                for (; dp.zaraz.q.length;) {
-                    const dF = dp.zaraz.q.shift();
-                    dp[dr].q.push(dF)
-                }
-                dx.defer = !0;
-                for (const dG of [localStorage, sessionStorage]) Object.keys(dG || {}).filter((dI => dI.startsWith("_zaraz_"))).forEach((dH => {
-                    try {
-                        dp[dr]["z_" + dH.slice(7)] = JSON.parse(dG.getItem(dH))
-                    } catch {
-                        dp[dr]["z_" + dH.slice(7)] = dG.getItem(dH)
-                    }
-                }));
-                dx.referrerPolicy = "origin";
-                dx.src = "https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(dp[dr])));
-                dw.parentNode.insertBefore(dx, dw)
-            };
-            ["complete", "interactive"].includes(dq.readyState) ? zaraz.init() : dp.addEventListener("DOMContentLoaded", zaraz.init)
-        }(w, d, "zarazData", "script");
-    })(window, document);</script>
-</head>
-<body>
+{% block content %}
+    {% load static %}
 
-<header role="banner">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-        <div class="container">
-            <a class="navbar-brand position-absolute" href="/home">UMA construction</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
-                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
-                <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/">Главная страница</a>
-                    </li>
-                    {#<li class="nav-item dropdown">#}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/services" id="dropdown04">Приемушество</a>
-                    </li>
-                    {#<a class="nav-link dropdown-toggle" href="/services" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>#}
-                    {#<div class="dropdown-menu" aria-labelledby="dropdown04">#}
-                    {#<a class="dropdown-item" href="../services.html">Pre-Construction</a>#}
-                    {#<a class="dropdown-item" href="../services.html">General Construction</a>#}
-                    {#<a class="dropdown-item" href="../services.html">House Renovation</a>#}
-                    {#<a class="dropdown-item" href="../services.html">Plumbing</a>#}
-                    {#</div>#}
-                    {#</li>#}
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/projects">Наши проекты</a>
-                    </li>
-                    {#<li class="nav-item">#}
-                    {#<a class="nav-link" href="news.html">News</a>#}
-                    {#</li>#}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">О нас</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Контакты</a>
-                    </li>
-                    {#<li class="nav-item cta-btn2">#}
-                    {#<a class="nav-link" href="../get-quote.html">#}
-                    {#<span class="d-inline-block px-4 py-2 border">Quotation</span>#}
-                    {#</a>#}
-                    {#</li>#}
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
 
 <section class="home-slider owl-carousel">
     <div class="slider-item" style="background-image: url('{% static "img/slider-2.jpg" %}');">
@@ -136,35 +25,9 @@
             </div>
         </div>
     </div>
-    {#</section>#}
+</section>
 
-    {#{% for main_page in main_page %}#}
-    {##}
-    {#    <section class="home-slider owl-carousel">#}
-    {#    <div class="slider-item" style="background-image: url({{ main_page.main_image.url }});">#}
-    {#        <div class="container">#}
-    {#            <div class="row slider-text align-items-center justify-content-center text-center">#}
-    {#                <div class="col-md-7 col-sm-12 element-animate">#}
-    {#                    <h1 class="mb-4">{{ main_page.moto }}</h1>#}
-    {#                    <p class="mb-0"><a href="/contact" target="_blank" class="btn btn-primary">Cвязаться с нами</a>#}
-    {#                    </p>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </div>#}
-    {#{% endfor %}#}
-    {#        <div class="slider-item" style="background-image: url('{% static "img/slider-1.jpg" %}');">#}
-    {#            <div class="container">#}
-    {#                <div class="row slider-text align-items-center justify-content-center text-center">#}
-    {#                    <div class="col-md-8 col-sm-12 element-animate">#}
-    {#                        <h1 class="mb-4">Высококвалифициорованные#}
-    {#                            специалисты </h1>#}
-    {#                        <p class="mb-0"><a href="#" target="_blank" class="btn btn-primary">Get Started</a></p>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#</section>#}
+
 
     <section class="section bg-light">
         <div class="container">
@@ -212,7 +75,7 @@
     {#            <p><a href="/projects" class="btn btn-primary">Посмотреть все проекты</a></p>#}
 
     <section class="section border-t">
-        {% for project in projects %}
+{#        {% for projects in project %}#}
 
             <div class="container">
                 <div class="row justify-content-center mb-5 element-animate">
@@ -224,19 +87,24 @@
                         <p><a href="/projects" class="btn btn-primary">Посмотреть все проекты</a></p>
                     </div>
                 </div>
+
                 <div class="row no-gutters">
+                    {% for project in projects %}
                     <div class="col-md-4 element-animate">
-                        {#                {% for project in projects %}#}
+
                         <a href="/project/{{ project.id }}" class="link-thumbnail">
                             <h3>{{ project.project_name }}</h3>
                             <span class="ion-plus icon"></span>
                             <img src="{{ project.project_image.url }}" alt="Image placeholder" class="img-fluid">
                         </a>
                     </div>
+                       {% endfor %}
                 </div>
+
             </div>
 
-        {% endfor %}
+
+     </section>
 
         {#            <div class="col-md-4 element-animate">#}
         {#                <a href="works-single.html" class="link-thumbnail">#}
@@ -274,7 +142,7 @@
         {#                </a>#}
         {#            </div>#}
         {#        </div>#}
-    </section>
+
 
     {#<h3>General Construction Building</h3>#}
     {#<span class="ion-plus icon"></span>#}
@@ -505,7 +373,8 @@
         </div>
     </section>
 </section>
-</body>
+{#</body>#}
 
 <!-- Mirrored from preview.colorlib.com/theme/pivot/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:13:52 GMT -->
-</html>
+{#</html>#}
+{% endblock %}
