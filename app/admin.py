@@ -14,7 +14,7 @@ admin.site.register(Contact, ContactAdmin)
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('project_name', 'description', 'preview')
+    list_display = ('id', 'project_name', 'description', 'preview' )
     list_filter = ('project_name',)
 
     def preview(self, obj):

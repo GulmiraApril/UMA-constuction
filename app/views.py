@@ -11,7 +11,7 @@ def home_view(request):
 
     p = {
 
-        'project': project,
+        'projects': project,
 
     }
     return render(request, 'home.html', p)
@@ -31,7 +31,7 @@ def project_view(request):
     project = Project.objects.all()
 
     p = {
-        'project': project
+        'projects': project
     }
     return render(request, 'projects.html', p)
 
@@ -43,13 +43,6 @@ def project_single_view(request, pk):
         'project': project,
 
     }
-    if request.method == "POST":
-        data = request.POST
-        obj = Contact.objects.create(name=data['name'], phone_number=data['number'], message=data['message'])
-
-        obj.save()
-
-        return render(request=request, template_name="projects-single.html", context=d)
 
     return render(request=request, template_name="projects-single.html", context=d)
 
