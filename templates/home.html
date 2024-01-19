@@ -1,8 +1,9 @@
 {% extends 'layouts/base.html' %}
-{% load static %}
-
 
 {% block content %}
+    {% load static %}
+
+
     <section class="home-slider owl-carousel">
         <div class="slider-item" style="background-image: url('{% static "img/slider-2.jpg" %}');">
             <div class="container">
@@ -27,6 +28,8 @@
             </div>
         </div>
     </section>
+
+
 
     <section class="section bg-light">
         <div class="container">
@@ -74,6 +77,8 @@
     {#            <p><a href="/projects" class="btn btn-primary">Посмотреть все проекты</a></p>#}
 
     <section class="section border-t">
+
+
         <div class="container">
             <div class="row justify-content-center mb-5 element-animate">
                 <div class="col-md-8 text-center">
@@ -84,18 +89,20 @@
                     <p><a href="/projects" class="btn btn-primary">Посмотреть все проекты</a></p>
                 </div>
             </div>
-        </div>
-        <div class="row no-gutters">
-            {% for project in projects %}
-                <div class="col-md-4 element-animate">
 
-                    <a href="/project/{{ project.id }}" class="link-thumbnail">
-                        <h3>{{ project.project_name }}</h3>
-                        <span class="ion-plus icon"></span>
-                        <img src="{{ project.project_image.url }}" alt="Image placeholder" class="img-fluid">
-                    </a>
-                </div>
-            {% endfor %}
+            <div class="row no-gutters">
+                {% for project in projects %}
+                    <div class="col-md-4 element-animate">
+
+                        <a href="/project/{{ project.id }}" class="link-thumbnail">
+                            <h3>{{ project.project_name }}</h3>
+                            <span class="ion-plus icon"></span>
+                            <img src="{{ project.project_image.url }}" alt="Image placeholder" class="img-fluid">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
         </div>
 
 
@@ -112,56 +119,49 @@
                         necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
                 </div>
             </div>
-        </div>
-    </section>
-    <div class="row mb-5">
+            <div class="row mb-5">
 
-    <section class="section bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-                    <div class="media d-block media-feature text-center">
-                        <span class="flaticon-blueprint icon"></span>
-                        <div class="media-body">
-                            <h3 class="mt-0 text-black">Передовые технологии</h3>
-                            <p>Передовые строительно-монтажные технологии что обеспечивает безупречный
-                                результат.</p>
-                            {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+                <section class="section bg-light">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
+                                <div class="media d-block media-feature text-center">
+                                    <span class="flaticon-blueprint icon"></span>
+                                    <div class="media-body">
+                                        <h3 class="mt-0 text-black">Передовые технологии</h3>
+                                        <p>Передовые строительно-монтажные технологии что обеспечивает безупречный
+                                            результат.</p>
+                                        {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
+                                <div class="media d-block media-feature text-center">
+                                    <span class="flaticon-building-1 icon"></span>
+                                    <div class="media-body">
+                                        <h3 class="mt-0 text-black">Высококвалифициорованные специалисты</h3>
+                                        <p>Благодаря которым мы успешно выполняем необходимые задачи и завершаем проекты
+                                            в точно намеченный
+                                            срок.</p>
+                                        {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
+                                <div class="media d-block media-feature text-center">
+                                    <span class="flaticon-crane icon"></span>
+
+
+                                    <div class="media-body">
+                                        <h3 class="mt-0 text-black">Многопрофильность</h3>
+                                        <p>ООО «UMA CONSTRUCTION» – является многопрофильной строительной организацией,
+                                            которая готова
+                                            приступить к реализации сложных комбинированных задач.</p>
+                                        {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-                    <div class="media d-block media-feature text-center">
-                        <span class="flaticon-building-1 icon"></span>
-                        <div class="media-body">
-                            <h3 class="mt-0 text-black">Высококвалифициорованные специалисты</h3>
-                            <p>Благодаря которым мы успешно выполняем необходимые задачи и завершаем проекты
-                                в точно намеченный
-                                срок.</p>
-                            {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-                    <div class="media d-block media-feature text-center">
-                        <span class="flaticon-crane icon"></span>
-
-
-                        <div class="media-body">
-                            <h3 class="mt-0 text-black">Многопрофильность</h3>
-                            <p>ООО «UMA CONSTRUCTION» – является многопрофильной строительной организацией,
-                                которая готова
-                                приступить к реализации сложных комбинированных задач.</p>
-                            {#<p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>#}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-</div>
-
+                </section>
 {% endblock %}
-
-
