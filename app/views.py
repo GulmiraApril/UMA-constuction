@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Contact, Project
 import requests
-from django.http import HttpResponse
 
 
 def home_view(request):
@@ -40,30 +39,11 @@ def project_single_view(request, pk):
     project = Project.objects.get(id=pk)
 
     d = {
-        'project': project,
+        'project': project
 
     }
 
     return render(request=request, template_name="projects-single.html", context=d)
-
-
-# def projects_single_view(request, pk):
-#     # Retrieve the first project with the given primary key (pk).
-#     project = Project.objects.filter(id=pk).first()
-#
-#     d = {
-#         'project': project,
-#     }
-#
-#     if request.method == "POST":
-#         data = request.POST
-#         obj = Project.objects.create(project_name=data['name'], description=data['description'],
-#                                      project_image=data['image'])
-#         obj.save()
-#
-#         return redirect(f'/projects/{pk}')
-#
-#     return render(request=request, template_name="projects-single.html", context=d)
 
 
 def contact_view(request):
