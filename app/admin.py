@@ -12,11 +12,16 @@ admin.site.register(Contact, ContactAdmin)
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('id', 'project_name', 'description', 'preview')
-    list_filter = ('project_name',)
+    list_display = ('id', 'name', 'description', 'preview')
+    list_filter = ('name',)
 
+
+  # list displayga qolgan imagelarni qoshish uchun previewLAR 3 TA YOZILISHI KK, Tepada ham preview 1 ,2 ,3 15- qatorda
+    # def preview(self, obj):
+    # def preview(self, obj):
+    # def preview(self, obj):
     def preview(self, obj):
-        html_code = f"""<img src={obj.project_image.url} alt="No image" width="50" height="60">"""
+        html_code = f"""<img src={obj.image1.url} alt="No image" width="50" height="60">"""
 
         return format_html(html_code)
 

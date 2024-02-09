@@ -566,3 +566,8 @@ header {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+/* Add this to your CSS file */
+.navbar-nav a.active {
+    color: #007bff; /* Change to your desired color */
+}
+

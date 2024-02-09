@@ -11,35 +11,46 @@ def home_view(request):
     p = {
 
         'projects': project,
+        'section': 'home'
 
     }
     return render(request, 'home.html', p)
 
 
 def service_view(request):
-    return render(request, 'services.html')
+    s = {
+        'section': 'service'
+    }
+    return render(request, 'services.html', s)
 
 
 def about_view(request):
-    return render(request, "about.html")
+    a = {
+        'section': 'about'
+    }
+    return render(request, "about.html", a)
 
 
 def project_view(request):
     data = request.GET
 
-    project = Project.objects.all()
+    projects = Project.objects.all()
 
     p = {
-        'projects': project
+        'projects': projects,
+        'section': 'projects'
     }
     return render(request, 'projects.html', p)
 
 
 def project_single_view(request, pk):
     project = Project.objects.get(id=pk)
+    more_projects = Project.objects.all()
 
     d = {
-        'project': project
+        'project': project,
+        'more_projects': more_projects,
+        'section': 'project'
 
     }
 
@@ -56,23 +67,9 @@ def contact_view(request):
               f" Phone number of a sender is {data['number']}, message : {data['message']}"
         requests.get(url)
         return redirect('/')
+    c = {
+        'section': 'contact'
+    }
 
-    return render(request, "contact.html")
+    return render(request, "contact.html", c)
 
-# def projects_single_view(request, pk):
-#     project = Project.objects.get(id=pk)
-#     d = {
-#         'project': project
-#
-#     }
-#
-#     if request.method == "POST":
-#         data = request.POST
-#         obj = Project.objects.create(project_name=data['name'], description=data['description'],
-#                                      project_image=data['image'])
-#
-#         obj.save()
-#
-#         return redirect(f'/projects/{pk}')
-#
-#     return render(request=request, template_name="projects-single.html", context=d)

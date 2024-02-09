@@ -5,6 +5,8 @@
 <!-- Mirrored from preview.colorlib.com/theme/pivot/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:13:22 GMT -->
 <head>
     <title>UMA construction &mdash; Website Template by Colorlib</title>
+    {#    <img src="path/to/your/logo.png" alt="Your Logo" class="logo">#}
+    {#    <img src="{% static 'img/1-01.svg' %}" alt="logo"/>#}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=K2D:400,700|Niramit:300,700" rel="stylesheet">
@@ -16,6 +18,12 @@
     <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+
+    {#    <link rel="stylesheet" href="{% static 'style.css' %}"/>#}
+    {#    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>#}
+    {#    <link rel="shortcut icon" type="img/1-01.svg" href="/favicon.ico"/>#}
+
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script nonce="cea98491-f573-479a-8280-3596aaa746d7">(function (w, d) {
@@ -73,39 +81,46 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <div class="container">
-            <a class="navbar-brand position-absolute" href="/home">UMA construction</a>
+            <a class="navbar-brand position-absolute" href="/">UMA construction</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
                     aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
                 <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/">Главная страница</a>
+                    {#                    <li {% if section == 'home' %} class="nav-link active" {% endif %} class="nav-item">#}
+                    {#                        <a href="/services">#}
+                    {#                        <a  href="/">Главная страница</a>#}
+                    {#                    </li>#}
+                    {##}
+                    {#                    <li {% if section == 'services' %} class="nav-link active"  {% endif %} class="nav-item">#}
+                    {#                        <a  href="/services" id="dropdown04">Приемушество</a>#}
+                    {#                    </li>#}
+                    {##}
+                    {#                    <li class="nav-item">#}
+                    {#                        <a {% if section == 'projects' %} class="nav-link active"  {% endif %} href="/projects">Наши проекты</a>#}
+                    {#                    </li>#}
+                    <li class="nav-item{% if section == 'home' %} active{% endif %}">
+                        <a href="/">Главная страница</a>
                     </li>
-                    {#<li class="nav-item dropdown">#}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/services" id="dropdown04">Приемушество</a>
+
+                    <li class="nav-item{% if section == 'services' %} active{% endif %}">
+                        <a href="/services" id="dropdown04">Приемушество</a>
                     </li>
-                    {#<a class="nav-link dropdown-toggle" href="/services" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>#}
-                    {#<div class="dropdown-menu" aria-labelledby="dropdown04">#}
-                    {#<a class="dropdown-item" href="../services.html">Pre-Construction</a>#}
-                    {#<a class="dropdown-item" href="../services.html">General Construction</a>#}
-                    {#<a class="dropdown-item" href="../services.html">House Renovation</a>#}
-                    {#<a class="dropdown-item" href="../services.html">Plumbing</a>#}
-                    {#</div>#}
-                    {#</li>#}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/projects">Наши проекты</a>
+
+                    <li class="nav-item{% if section == 'projects' %} active{% endif %}">
+                        <a href="/projects">Наши проекты</a>
                     </li>
+
                     {#<li class="nav-item">#}
                     {#<a class="nav-link" href="news.html">News</a>#}
                     {#</li>#}
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">О нас</a>
+                        <a {% if section == 'about' %} class="nav-link active"  {% endif %} href="/about">О нас</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Контакты</a>
+                    <li>
+                        <a {% if section == 'contact' %} class="nav-link active"  {% endif %}
+                                                         href="/contact">Контакты</a>
                     </li>
                     {#<li class="nav-item cta-btn2">#}
                     {#<a class="nav-link" href="../get-quote.html">#}
@@ -163,9 +178,9 @@
                 <p>
 
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                    All rights reserved | This template is made with <i class="fa fa-heart text-danger"
-                                                                        aria-hidden="true"></i> by <a
-                        href="https://colorlib.com/" target="_blank">Colorlib</a>
+                    All rights reserved | This website is made with <i class="fa fa-heart text-danger"
+                                                                       aria-hidden="true"></i> by <a
+                        href="https://colorlib.com/" target="_blank">CodeNinja</a>
 
                 </p>
             </div>
@@ -175,25 +190,25 @@
                     </li>
                     <li><span class="mr-3 d-block">Контакты:</span><span class="text-white">+99 890 318 29 92</span>
                     </li>
-{#                    <li><span class="mr-3 d-block">Fax:</span><span class="text-white">+1 242 4942 290</span></li>#}
+
                     <li><span class="mr-3 d-block">E-mail:</span><span
                             class="text-white">ulugbekallabergenov@yahoo.com</span></li>
-{#                    <li><span class="mr-3 d-block">E-mail:</span><span class="text-white">ulugbekallabergenov@yahoo.com<a href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a13141c153a03150f081e15171b131454191517">[email&#160;protected]</a></span></li>#}
+                    {#                    <li><span class="mr-3 d-block">E-mail:</span><span class="text-white">ulugbekallabergenov@yahoo.com<a href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a13141c153a03150f081e15171b131454191517">[email&#160;protected]</a></span></li>#}
 
                 </ul>
 
 
-{#                #}
-{#                <ul class="list-unstyled footer-link">#}
-{#                    <li><span class="mr-3 d-block">Address:</span><span class="text-white">34 Street Name, City Name Here, United States</span>#}
-{#                    </li>#}
-{#                    <li><span class="mr-3 d-block">Phone:</span><span class="text-white">+1 242 4942 290</span></li>#}
-{#                    <li><span class="mr-3 d-block">Fax:</span><span class="text-white">+1 242 4942 290</span></li>#}
-{#                    <li><span class="mr-3 d-block">E-mail:</span><span class="text-white"><a#}
-{#                            href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__"#}
-{#                            data-cfemail="fa93949c95ba83958f889e95979b9394d4999597">[email&#160;protected]</a></span>#}
-{#                    </li>#}
-{#                </ul>#}
+                {#                #}
+                {#                <ul class="list-unstyled footer-link">#}
+                {#                    <li><span class="mr-3 d-block">Address:</span><span class="text-white">34 Street Name, City Name Here, United States</span>#}
+                {#                    </li>#}
+                {#                    <li><span class="mr-3 d-block">Phone:</span><span class="text-white">+1 242 4942 290</span></li>#}
+                {#                    <li><span class="mr-3 d-block">Fax:</span><span class="text-white">+1 242 4942 290</span></li>#}
+                {#                    <li><span class="mr-3 d-block">E-mail:</span><span class="text-white"><a#}
+                {#                            href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__"#}
+                {#                            data-cfemail="fa93949c95ba83958f889e95979b9394d4999597">[email&#160;protected]</a></span>#}
+                {#                    </li>#}
+                {#                </ul>#}
             </div>
             <div class="col-md-3">
                 <h3 class="text-white">Быстрые ссылки</h3>
@@ -206,19 +221,19 @@
                 </ul>
 
 
-{#                <ul class="list-unstyled footer-link">#}
-{#                    <li><a href="#">About</a></li>#}
-{#                    <li><a href="#">Services</a></li>#}
-{#                    <li><a href="#">Works</a></li>#}
-{#                    <li><a href="#">Contact</a></li>#}
-{#                </ul>#}
+                {#                <ul class="list-unstyled footer-link">#}
+                {#                    <li><a href="#">About</a></li>#}
+                {#                    <li><a href="#">Services</a></li>#}
+                {#                    <li><a href="#">Works</a></li>#}
+                {#                    <li><a href="#">Contact</a></li>#}
+                {#                </ul>#}
             </div>
             <div class="col-md-3">
                 <h3 class="text-white">Мы в соцсетях</h3>
                 <ul class="list-unstyled footer-link d-flex footer-social">
                     <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
                     <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
-{#                    <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>#}
+                    {#                    <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>#}
                     <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
                 </ul>
             </div>
@@ -259,135 +274,23 @@
         integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
         data-cf-beacon='{"rayId":"84260f95896e6e69","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
         crossorigin="anonymous"></script>
+<!-- ... Previous HTML content ... -->
+
+<script>
+    // Get the current URL
+    var currentUrl = window.location.pathname;
+
+    // Find the corresponding navigation link and add the "active" class
+    document.querySelectorAll('.navbar-nav a').forEach(function (link) {
+        if (link.getAttribute('href') === currentUrl) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+
 </body>
 
 <!-- Mirrored from preview.colorlib.com/theme/pivot/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:12:18 GMT -->
 </html>
 
-{#<section class="container cta-overlap">#}
-{#    <div class="text d-flex">#}
-{#        <h2 class="h3">Свяжитесь с нами для воплощение ваших проектов и запросите смету</h2>#}
-{#        <div class="ml-auto btn-wrap">#}
-{#            <a href="/contact" class="btn-cta btn btn-outline-white">Свяжитесь с нами</a>#}
-{#        </div>#}
-{#    </div>#}
-{#</section>#}
-{##}
-{#<footer class="site-footer bg-dark" role="contentinfo">#}
-{#    <div class="container">#}
-{#        <div class="row">#}
-{#            <div class="col-md-3">#}
-{#                <p>#}
-{##}
-                    {#Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>#}
-{##}
-{#                </p>#}
-{#            </div>#}
-{#            <div class="col-md-3">#}
-{#                <ul class="list-unstyled footer-link">#}
-{#                    <li><span class="mr-3 d-block">Адрес:</span><span class="text-white">г.Ташкент, Яшнабадский район, Амир Темур МФЙ, ул.Темирчи 2а</span>#}
-{#                    </li>#}
-{#                    <li><span class="mr-3 d-block">Контакты:</span><span class="text-white">+99 890 318 29 92</span>#}
-{#                    </li>#}
-                    {#<li><span class="mr-3 d-block">Fax:</span><span class="text-white">+1 242 4942 290</span></li>#}
-{#                    <li><span class="mr-3 d-block">E-mail:</span><span#}
-{#                            class="text-white">ulugbekallabergenov@yahoo.com</span></li>#}
-                    {#<li><span class="mr-3 d-block">E-mail:</span><span class="text-white">ulugbekallabergenov@yahoo.com<a href="https://preview.colorlib.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a13141c153a03150f081e15171b131454191517">[email&#160;protected]</a></span></li>#}
-{##}
-{#                </ul>#}
-{#            </div>#}
-{#            <div class="col-md-3">#}
-{#                <h3 class="text-white">Быстрые ссылки</h3>#}
-{#                <ul class="list-unstyled footer-link">#}
-{#                    <li><a href="/about">О нас</a></li>#}
-{#                    <li><a href="/services">Приемушество</a></li>#}
-{#                    <li><a href="/projects">Наши проекты</a></li>#}
-{#                    <li><a href="/contact">Контакты</a></li>#}
-{#                </ul>#}
-{#            </div>#}
-{#            <div class="col-md-3">#}
-{#                <h3 class="text-white">Social</h3>#}
-{#                <ul class="list-unstyled footer-link d-flex footer-social">#}
-{#                    <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>#}
-{#                    <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>#}
-{#                    <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>#}
-{#                    <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>#}
-{#                </ul>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</footer>#}
-{##}
-{##}
-{#<div id="loader" class="show fullscreen">#}
-{#    <svg class="circular" width="48px" height="48px">#}
-{#        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>#}
-{#        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"#}
-{#                stroke="#f4b214"/>#}
-{#    </svg>#}
-{#</div>#}
-{#<script data-cfasync="false"#}
-{#        src="https://preview.colorlib.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>#}
-{#<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>#}
-{#<script src="{% static 'js/popper.min.js' %}"></script>#}
-{#<script src="{% static 'js/bootstrap.min.js' %}"></script>#}
-{#<script src="{% static 'js/owl.carousel.min.js' %}"></script>#}
-{#<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>#}
-{#<script src="{% static 'js/main.js' %}"></script>#}
-{##}
-{#<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>#}
-{#<script>#}
-{#    window.dataLayer = window.dataLayer || [];#}
-{##}
-{#    function gtag() {#}
-{#        dataLayer.push(arguments);#}
-{#    }#}
-{##}
-{#    gtag('js', new Date());#}
-{##}
-{#    gtag('config', 'UA-23581568-13');#}
-{#</script>#}
-{#<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"#}
-{#        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="#}
-{#        data-cf-beacon='{"rayId":"842612156f920ee4","b":1,"version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'#}
-{#        crossorigin="anonymous"></script>#}
-{#</body>#}
-{##}
-{#<!-- Mirrored from preview.colorlib.com/theme/pivot/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:13:52 GMT -->#}
-{#</html>#}
-{##}
-{#<div id="loader" class="show fullscreen">#}
-{#    <svg class="circular" width="48px" height="48px">#}
-{#        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>#}
-{#        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"#}
-{#                stroke="#f4b214"/>#}
-{#    </svg>#}
-{#</div>#}
-{#<script data-cfasync="false"#}
-{#        src="https://preview.colorlib.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>#}
-{#<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>#}
-{#<script src="{% static 'js/popper.min.js' %}"></script>#}
-{#<script src="{% static 'js/bootstrap.min.js' %}"></script>#}
-{#<script src="{% static 'js/owl.carousel.min.js' %}"></script>#}
-{#<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>#}
-{#<script src="{% static 'js/main.js' %}"></script>#}
-{##}
-{#<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>#}
-{#<script>#}
-{#    window.dataLayer = window.dataLayer || [];#}
-{##}
-{#    function gtag() {#}
-{#        dataLayer.push(arguments);#}
-{#    }#}
-{##}
-{#    gtag('js', new Date());#}
-{##}
-{#    gtag('config', 'UA-23581568-13');#}
-{#</script>#}
-{#<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"#}
-{#        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="#}
-{#        data-cf-beacon='{"rayId":"842612156f920ee4","b":1,"version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'#}
-{#        crossorigin="anonymous"></script>#}
-{#</body>#}
-
-<!-- Mirrored from preview.colorlib.com/theme/pivot/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:13:52 GMT -->

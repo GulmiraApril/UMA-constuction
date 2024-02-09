@@ -94,10 +94,10 @@
                 {% for project in projects %}
                     <div class="col-md-4 element-animate">
 
-                        <a href="/project/{{ project.id }}" class="link-thumbnail">
-                            <h3>{{ project.project_name }}</h3>
+                        <a href="/projects" class="link-thumbnail">
+                            <h3>{{ project.name }}</h3>
                             <span class="ion-plus icon"></span>
-                            <img src="{{ project.project_image.url }}" alt="Image placeholder" class="img-fluid">
+                            <img src="{{ project.image1.url }}" alt="Image placeholder" class="img-fluid">
                         </a>
                     </div>
                 {% endfor %}
@@ -115,11 +115,10 @@
             <div class="row justify-content-center mb-5 element-animate">
                 <div class="col-md-8 text-center">
                     <h2 class="text-uppercase heading border-bottom mb-4">Наше приемушество</h2>
-                    <p class="mb-3 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit,
-                        necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+                    <p class="mb-3 lead">Гарантия - Мы уверены в надежности и долговечности завершенных нами объектов что предоставляем долгосрочную гарантию на все виды работы.</p>
                 </div>
             </div>
-            <div class="row mb-5">
+            <sec class="row mb-5">
 
                 <section class="section bg-light">
                     <div class="container">
@@ -163,5 +162,9 @@
                             </div>
                         </div>
                     </div>
+
                 </section>
+
+    </section>
+
 {% endblock %}
