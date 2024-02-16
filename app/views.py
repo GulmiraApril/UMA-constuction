@@ -11,24 +11,24 @@ def home_view(request):
     p = {
 
         'projects': project,
-        'section': 'home'
+        'home': 'active'
 
     }
-    return render(request, 'home.html', p)
+    return render(request, 'home.html', context=p)
 
 
 def service_view(request):
     s = {
-        'section': 'service'
+        'service': 'active'
     }
-    return render(request, 'services.html', s)
+    return render(request, 'services.html', context=s)
 
 
 def about_view(request):
     a = {
-        'section': 'about'
+        'about': 'active'
     }
-    return render(request, "about.html", a)
+    return render(request, "about.html", context=a)
 
 
 def project_view(request):
@@ -38,9 +38,9 @@ def project_view(request):
 
     p = {
         'projects': projects,
-        'section': 'projects'
+        'project': 'active'
     }
-    return render(request, 'projects.html', p)
+    return render(request, 'projects.html', context=p)
 
 
 def project_single_view(request, pk):
@@ -50,11 +50,12 @@ def project_single_view(request, pk):
     d = {
         'project': project,
         'more_projects': more_projects,
-        'section': 'project'
+        'project1': 'active'
 
     }
 
-    return render(request=request, template_name="projects-single.html", context=d)
+    return render(request=request, template_name="projects-single.html",
+                  context={'project': project, 'more_projects': more_projects, 'project1': 'active'})
 
 
 def contact_view(request):
@@ -68,8 +69,7 @@ def contact_view(request):
         requests.get(url)
         return redirect('/')
     c = {
-        'section': 'contact'
+        'contact': 'active'
     }
 
-    return render(request, "contact.html", c)
-
+    return render(request, "contact.html", context={'contact': 'active'})

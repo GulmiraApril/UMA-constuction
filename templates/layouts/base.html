@@ -88,45 +88,26 @@
             </button>
             <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
                 <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
-                    {#                    <li {% if section == 'home' %} class="nav-link active" {% endif %} class="nav-item">#}
-                    {#                        <a href="/services">#}
-                    {#                        <a  href="/">Главная страница</a>#}
-                    {#                    </li>#}
-                    {##}
-                    {#                    <li {% if section == 'services' %} class="nav-link active"  {% endif %} class="nav-item">#}
-                    {#                        <a  href="/services" id="dropdown04">Приемушество</a>#}
-                    {#                    </li>#}
-                    {##}
-                    {#                    <li class="nav-item">#}
-                    {#                        <a {% if section == 'projects' %} class="nav-link active"  {% endif %} href="/projects">Наши проекты</a>#}
-                    {#                    </li>#}
-                    <li class="nav-item{% if section == 'home' %} active{% endif %}">
+
+                    <li class="nav-item {{ home }}">
                         <a href="/">Главная страница</a>
                     </li>
 
-                    <li class="nav-item{% if section == 'services' %} active{% endif %}">
+                    <li class="nav-item {{ service }}">
                         <a href="/services" id="dropdown04">Приемушество</a>
                     </li>
 
-                    <li class="nav-item{% if section == 'projects' %} active{% endif %}">
+                    <li class="nav-item {{ project }}">
                         <a href="/projects">Наши проекты</a>
                     </li>
 
-                    {#<li class="nav-item">#}
-                    {#<a class="nav-link" href="news.html">News</a>#}
-                    {#</li>#}
-                    <li class="nav-item">
-                        <a {% if section == 'about' %} class="nav-link active"  {% endif %} href="/about">О нас</a>
+                    <li class="nav-item {{ about }}">
+                        <a href="/about">О нас</a>
                     </li>
-                    <li>
-                        <a {% if section == 'contact' %} class="nav-link active"  {% endif %}
-                                                         href="/contact">Контакты</a>
+                    <li class="nav-item {{ contact }}">
+                        <a href="/contact">Контакты</a>
                     </li>
-                    {#<li class="nav-item cta-btn2">#}
-                    {#<a class="nav-link" href="../get-quote.html">#}
-                    {#<span class="d-inline-block px-4 py-2 border">Quotation</span>#}
-                    {#</a>#}
-                    {#</li>#}
+
                 </ul>
             </div>
         </div>
