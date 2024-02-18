@@ -73,3 +73,31 @@ def contact_view(request):
     }
 
     return render(request, "contact.html", context={'contact': 'active'})
+
+
+# views.py
+
+
+# def home(request):
+#     active_page = 'home'  # Assuming the home page is active
+#     return render(request, 'home.html', {'active_page': active_page})
+#
+#
+# def services(request):
+#     active_page = 'services'
+#     return render(request, 'services.html', {'active_page': active_page})
+#
+#
+# def projects(request):
+#     active_page = 'projects'
+#     return render(request, 'projects.html', {'active_page': active_page})
+#
+#
+# def about(request):
+#     active_page = 'about'
+#     return render(request, 'about.html', {'active_page': active_page})
+#
+#
+# def contact(request):
+#     active_page = 'contact'
+#     return render(request, 'contact.html', {'active_page': active_page})
