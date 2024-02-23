@@ -4,9 +4,8 @@
 
 <!-- Mirrored from preview.colorlib.com/theme/pivot/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2024 17:13:22 GMT -->
 <head>
-    <title>UMA construction &mdash; Website Template by Colorlib</title>
-    {#    <img src="path/to/your/logo.png" alt="Your Logo" class="logo">#}
-    {#    <img src="{% static 'img/1-01.svg' %}" alt="logo"/>#}
+    <title>UMA construction&mdash; Website Template by Colorlib</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=K2D:400,700|Niramit:300,700" rel="stylesheet">
@@ -80,52 +79,43 @@
 <header role="banner">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand position-absolute" href="index.html">Pivot</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+            <a class="navbar-brand position-absolute" href="/">UMA construction<img src="{% static 'img/logo2.png' %}" alt="Logo" width="100" height="100"></a>
+            &nbsp&nbsp&nbsp<button class="navbar-toggler active" type="button" data-toggle="collapse" data-target="#navbarsExample05"
                     aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
                 <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                    <li class="nav-item {{ home }}">
+                        <a class="nav-link" href="/">Главная страница</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Services</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="services.html">Pre-Construction</a>
-                            <a class="dropdown-item" href="services.html">General Construction</a>
-                            <a class="dropdown-item" href="services.html">House Renovation</a>
-                            <a class="dropdown-item" href="services.html">Plumbing</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="works.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="news.html">News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item cta-btn2">
-                        <a class="nav-link" href="get-quote.html">
-                            <span class="d-inline-block px-4 py-2 border">Quotation</span>
-                        </a>
+
+                    <li class="nav-item {{ service }}">
+                        <a href="/services">Приемушество</a>
+                    </li>&nbsp&nbsp
+
+                    <li class="nav-item {{ project }}">
+                        <a href="/projects">Наши проекты</a>
+                    </li>&nbsp&nbsp
+
+                    <li class="nav-item {{ about }}">
+                        <a href="/about">О нас</a>
+                    </li>&nbsp&nbsp
+
+                    <li class="nav-item {{ contact }}">
+                        <a href="/contact">Контакты</a>
+
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
 {#<header role="banner">#}
 {#    <nav class="navbar navbar-expand-lg navbar-light bg-light">#}
 {#        <div class="container">#}
-{#            <a class="navbar-brand position-absolute" href="/">UMA construction</a>#}
+{#            <a class="navbar-brand position-absolute" href="/">UMA construction<img src="{% static 'img/logo2.png' %}" alt="Logo" width="100" height="100"></a>#}
 {#            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"#}
 {#                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">#}
 {#                <span class="navbar-toggler-icon"></span>#}
@@ -136,7 +126,7 @@
 {#                        <a class="nav-link" href="/">Главная страница</a>#}
 {#                    </li>#}
 {#                    <li class="nav-item {{ service }}">#}
-{#                        <a href="/services" id="dropdown04">Приемушество</a>#}
+{#                        <a href="/services">Приемушество</a>#}
 {#                    </li>#}
 {#                    <li class="nav-item {{ project }}">#}
 {#                        <a href="/projects">Наши проекты</a>#}
@@ -147,6 +137,11 @@
 {#                    <li class="nav-item {{ contact }}">#}
 {#                        <a href="/contact">Контакты</a>#}
 {#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{##}
+{#             <div class="collapse navbar-collapse position-relative" id="navbarsExample05">#}
+{#                <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">#}
 {#                </ul>#}
 {#            </div>#}
 {#        </div>#}
@@ -177,7 +172,7 @@
                 <p>
 
                     Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                    All rights reserved | This website is made with <i class="fa fa-heart text-danger"
+                    All rights reserved | sayt dizaynini va saytni tayyorlagan web-studio <i class="fa fa-heart text-danger"
                                                                        aria-hidden="true"></i> by <a
                         href="https://colorlib.com/" target="_blank">CodeNinja</a>
 
@@ -220,19 +215,13 @@
                 </ul>
 
 
-                {#                <ul class="list-unstyled footer-link">#}
-                {#                    <li><a href="#">About</a></li>#}
-                {#                    <li><a href="#">Services</a></li>#}
-                {#                    <li><a href="#">Works</a></li>#}
-                {#                    <li><a href="#">Contact</a></li>#}
-                {#                </ul>#}
+
             </div>
             <div class="col-md-3">
                 <h3 class="text-white">Мы в соцсетях</h3>
                 <ul class="list-unstyled footer-link d-flex footer-social">
                     <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
                     <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
-                    {#                    <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>#}
                     <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
                 </ul>
             </div>
