@@ -64,7 +64,7 @@ def contact_view(request):
         obj = Contact.objects.create(name=data['name'], phone_number=data['number'], message=data['message'])
 
         obj.save()
-        url = f"https://api.telegram.org/bot6298724589:AAHQn4M1fxewf_9bSlDQAkPi5jvS2GzPGnk/sendMessage?chat_id=748076346&text=you have a notification from UMA construction: " \
+        url = f"https://api.telegram.org/bot6298724589:AAHQn4M1fxewf_9bSlDQAkPi5jvS2GzPGnk/sendMessage?chat_id=693411853&text=you have a notification from UMA construction: " \
               f" Phone number of a sender is {data['number']}, message : {data['message']}"
         requests.get(url)
         return redirect('/')
@@ -73,31 +73,74 @@ def contact_view(request):
     }
 
     return render(request, "contact.html", context={'contact': 'active'})
-
-
-# views.py
-
-
-# def home(request):
-#     active_page = 'home'  # Assuming the home page is active
-#     return render(request, 'home.html', {'active_page': active_page})
+# /////
+#
+# from django.shortcuts import render, redirect
+# from .models import Contact, Project
+# import requests
 #
 #
-# def services(request):
-#     active_page = 'services'
-#     return render(request, 'services.html', {'active_page': active_page})
+# def home_view(request):
+#     data = request.GET
+#
+#     project = Project.objects.all()
+#
+#     p = {
+#
+#         'projects': project
+#     }
+#     return render(request, 'home.html', context=p)
 #
 #
-# def projects(request):
-#     active_page = 'projects'
-#     return render(request, 'projects.html', {'active_page': active_page})
+# def service_view(request):
+#     s = {
+#         'service': 'active'
+#     }
+#     return render(request, 'services.html', context=s)
 #
 #
-# def about(request):
-#     active_page = 'about'
-#     return render(request, 'about.html', {'active_page': active_page})
+# def about_view(request):
+#     a = {
+#         'about': 'active'
+#     }
+#     return render(request, "about.html", context=a)
 #
 #
-# def contact(request):
-#     active_page = 'contact'
-#     return render(request, 'contact.html', {'active_page': active_page})
+# def project_view(request):
+#     data = request.GET
+#
+#     projects = Project.objects.all()
+#
+#     p = {
+#         'projects': projects
+#
+#     }
+#     return render(request, 'projects.html', context=p)
+#
+#
+# def project_single_view(request, pk):
+#     project = Project.objects.get(id=pk)
+#     more_projects = Project.objects.all()
+#
+#     d = {
+#         'project': project,
+#         'more_projects': more_projects
+#
+#     }
+#
+#     return render(request=request, template_name="projects-single.html",
+#                   context={'project': project, 'more_projects': more_projects})
+#
+#
+# def contact_view(request):
+#     if request.method == "POST":
+#         data = request.POST
+#         obj = Contact.objects.create(name=data['name'], phone_number=data['number'], message=data['message'])
+#
+#         obj.save()
+#         url = f"https://api.telegram.org/bot6298724589:AAHQn4M1fxewf_9bSlDQAkPi5jvS2GzPGnk/sendMessage?chat_id=748076346&text=you have a notification from UMA construction: " \
+#               f" Phone number of a sender is {data['number']}, message : {data['message']}"
+#         requests.get(url)
+#         return redirect('/')
+#
+#     return render(request, "contact.html")
