@@ -6,8 +6,8 @@
 *.iml
 out
 gen
-/env/
-/env
+/venv/
+/venv
 /db.sqlite3
 
 /staticfiles
