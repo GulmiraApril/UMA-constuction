@@ -75,35 +75,34 @@
     })(window, document);</script>
 </head>
 <body>
-
 <header role="banner">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand position-absolute" href="/">UMA construction<img src="{% static 'img/logo2.png' %}" alt="Logo" width="100" height="100"></a>
-            &nbsp&nbsp&nbsp<button class="navbar-toggler active" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+            <a class="navbar-brand position-absolute" href="/">UMA construction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
                     aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </button>
             <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
                 <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
-                    <li class="nav-item {{ home }}">
-                        <a class="nav-link" href="/">Главная страница</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ home }}" href="/">Главная страница</a>
                     </li>
 
-                    <li class="nav-item {{ service }}">
-                        <a href="/services">Приемушество</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ service }}" href="/services">Приемушество</a>
                     </li>&nbsp&nbsp
 
-                    <li class="nav-item {{ project }}">
-                        <a href="/projects">Наши проекты</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ project }}" href="/projects">Наши проекты</a>
                     </li>&nbsp&nbsp
 
-                    <li class="nav-item {{ about }}">
-                        <a href="/about">О нас</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ about }}" href="/about">О нас</a>
                     </li>&nbsp&nbsp
 
-                    <li class="nav-item {{ contact }}">
-                        <a href="/contact">Контакты</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ contact }}" href="/contact">Контакты</a>
 
                     </li>
                 </ul>
@@ -111,6 +110,45 @@
         </div>
     </nav>
 </header>
+
+{##}
+{#<header role="banner">#}
+{#    <nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#        <div class="container">#}
+{#            <a class="navbar-brand position-absolute" href="/">UMA construction<img src="{% static 'img/logo2.png' %}" alt="Logo" width="100" height="100"></a>#}
+{#            &nbsp&nbsp&nbsp<button class="navbar-toggler active" type="button" data-toggle="collapse" data-target="#navbarsExample05"#}
+{#                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">#}
+{#                <span class="navbar-toggler-icon"></span>#}
+{#            </button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp#}
+{#            <div class="collapse navbar-collapse position-relative" id="navbarsExample05">#}
+{#                <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="/">Главная страница</a>#}
+{#                    </li>#}
+{##}
+{#                    <li class="nav-item">#}
+{#                        <a href="/services">Приемушество</a>#}
+{#                    </li>&nbsp&nbsp#}
+{##}
+{#                    <li class="nav-item">#}
+{#                        <a href="/projects">Наши проекты</a>#}
+{#                    </li>&nbsp&nbsp#}
+{##}
+{#                    <li class="nav-item">#}
+{#                        <a href="/about">О нас</a>#}
+{#                    </li>&nbsp&nbsp#}
+{##}
+{#                    <li class="nav-item">#}
+{#                        <a href="/contact">Контакты</a>#}
+{##}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div>#}
+{#    </nav>#}
+{#</header>#}
+
+
 
 {#<header role="banner">#}
 {#    <nav class="navbar navbar-expand-lg navbar-light bg-light">#}

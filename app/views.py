@@ -50,12 +50,11 @@ def project_single_view(request, pk):
     d = {
         'project': project,
         'more_projects': more_projects,
-        'project1': 'active'
+        # 'project1': 'active'
 
     }
 
-    return render(request=request, template_name="projects-single.html",
-                  context={'project': project, 'more_projects': more_projects, 'project1': 'active'})
+    return render(request=request, template_name="projects-single.html", context=d)
 
 
 def contact_view(request):
@@ -72,7 +71,7 @@ def contact_view(request):
         'contact': 'active'
     }
 
-    return render(request, "contact.html", context={'contact': 'active'})
+    return render(request, "contact.html", context=c)
 # /////
 #
 # from django.shortcuts import render, redirect
